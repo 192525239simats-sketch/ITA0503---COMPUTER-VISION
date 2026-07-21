@@ -1,0 +1,14 @@
+import cv2
+import matplotlib.pyplot as plt
+
+image = cv2.imread(r"C:\Users\anilk\Downloads\WhatsApp Image 2026-07-11 at 8.07.46 PM.jpeg")
+
+if image is None:
+    print("Image not found!")
+else:
+    for i, color in enumerate(('b', 'g', 'r')):
+        hist = cv2.calcHist([image], [i], None, [256], [0, 256])
+        plt.plot(hist, color=color)
+
+    plt.title("Color Histogram")
+    plt.show()
