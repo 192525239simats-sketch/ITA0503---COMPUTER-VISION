@@ -1,0 +1,25 @@
+import cv2
+
+# Load image using full file path
+image = cv2.imread(r"C:\Users\anilk\Downloads\WhatsApp Image 2026-07-11 at 8.07.46 PM.jpeg")
+
+# Check if image is loaded successfully
+if image is None:
+    print("Error: Image not found!")
+    exit()
+
+# Convert to grayscale
+gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+# Perform edge detection
+edges = cv2.Canny(gray_image, 100, 200)
+
+# Display images
+cv2.imshow("Original Image", image)
+cv2.imshow("Edge Detected Image", edges)
+
+# Wait until a key is pressed
+cv2.waitKey(0)
+
+# Close all OpenCV windows
+cv2.destroyAllWindows()
