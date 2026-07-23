@@ -1,0 +1,25 @@
+import cv2
+
+# Read the image
+image = cv2.imread(r"C:\Users\anilk\Pictures\WhatsApp Image 2026-07-11 at 8.07.46 PM.jpeg")
+
+# Check if the image is loaded
+if image is None:
+    print("Error: Image not found!")
+else:
+    # Flip horizontally (Y-axis)
+    flipped_image = cv2.flip(image, 1)
+
+    # Rotate 180 degrees
+    rotated_image = cv2.rotate(flipped_image, cv2.ROTATE_180)
+
+    # Display images
+    cv2.imshow("Original Image", image)
+    cv2.imshow("Rotated 180-degree Clockwise Along Y-axis", rotated_image)
+
+    # Save the rotated image
+    cv2.imwrite("rotated_image.jpg", rotated_image)
+
+    # Wait for a key press
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
