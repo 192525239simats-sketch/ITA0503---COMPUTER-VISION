@@ -1,0 +1,12 @@
+Install OpenCV if not already installed using:
+• pip install opencv-python 
+2. Import the required libraries (cv2 and numpy).
+3. Read the input image using cv2.imread().
+4. Convert the image to grayscale using cv2.cvtColor().
+5. Apply the Sobel filter in the X and Y directions using cv2.Sobel().
+6. Compute the absolute gradient magnitude using cv2.convertScaleAbs().
+7. Combine the X and Y gradients using cv2.addWeighted().
+8. Display the original, Sobel X, Sobel Y, and combined edge images using cv2.imshow().
+9. Save the output images using cv2.imwrite(), if needed.
+10. Wait for a key press and close all image windows 
+using cv2.waitKey(0) and cv2.destroyAllWindows().
